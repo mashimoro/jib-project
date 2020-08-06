@@ -22,6 +22,6 @@ router = DefaultRouter()
 router.register(r'',WorkerModelViewSetView)
 
 urlpatterns = [
-    path('abc' ,WorkerListView.as_view()),
+    path('/workerListView' ,WorkerListView.as_view()),
     path('' ,include(router.urls)),
 ]
