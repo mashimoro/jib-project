@@ -2,7 +2,7 @@ from django.test import TestCase
 from ..models import Worker
 
 class TestWorker(TestCase):
-    def test_worker_should_defined_field(selt):
+  def test_worker_should_defined_field(selt):
         #Given
         first_name='Jad'
         last_name='Put'
