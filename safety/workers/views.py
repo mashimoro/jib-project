@@ -41,3 +41,7 @@ class WorkerListView(APIView):
     # 
     # return render(request,'worker_list.html',{'workers' : worker_list})
 
+from rest_framework import viewsets
+class WorkerModelViewSetView(viewsets.ModelViewSet):
+  queryset = Worker.objects.all()
+  serializer_class = WorkerSerializer
