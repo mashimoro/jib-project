@@ -1,8 +1,10 @@
-from django.test import TestCase
-from ..models import Worker
+from django.test import TestCase 
 import json
+from rest_framework.test import APITestCase
 
-class TestWorkerList(TestCase):
+from ..models import Worker
+
+class TestWorkerList(APITestCase):
   def test_view_shound_be_assessible(self):
     respon = self.client.get('/workers')
     # print(dir(respon))
@@ -42,8 +44,12 @@ class TestWorkerList(TestCase):
           "address": "address"}
         ]  
     #When
-    respon =self.client.get('/workers')
+    
+    respon = self.client.get('/workers')
+ 
+    
     #Then
     # self.assertContains(respon,'<li>first_name</li>')
     # self.assertContains(respon,'<li>first_name2</li>')
-    self.assertEqual(respon.content.decode('utf-8') , json.dumps(exp) )
+    # self.assertEqual(respon.content.decode('utf-8') , json.dumps(exp) )
+    self.assertEqual(respon.data ,exp)

@@ -38,7 +38,7 @@ DJANGO_APP = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APP = []
+THIRD_PARTY_APP = ['rest_framework',]
 
 LOCAL_APP = ['workers',]
 
