@@ -40,7 +40,7 @@ DJANGO_APP = [
 
 THIRD_PARTY_APP = ['rest_framework',]
 
-LOCAL_APP = ['workers',]
+LOCAL_APP = ['workers','covid19_report']
 
  # 'django.contrib.admin',
     # 'django.contrib.auth',
