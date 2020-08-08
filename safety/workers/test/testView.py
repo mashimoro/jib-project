@@ -6,7 +6,7 @@ from ..models import Worker
 
 class TestWorkerList(APITestCase):
   def test_view_shound_be_assessible(self):
-    respon = self.client.get('/workers')
+    respon = self.client.get('/workers/')
     # print(dir(respon))
     self.assertEqual(respon.status_code,200)
   def test_view_should_render_list_of_worker_names(self):
@@ -45,7 +45,7 @@ class TestWorkerList(APITestCase):
         ]  
     #When
     
-    respon = self.client.get('/workers')
+    respon = self.client.get('/workers/')
  
     
     #Then
