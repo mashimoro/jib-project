@@ -9,3 +9,6 @@ class Worker(models.Model):
     secondary_phone=models.CharField(max_length=10)
     address=models.TextField()
     image_profile=models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'

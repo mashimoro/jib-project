@@ -33,3 +33,15 @@ class TestWorker(TestCase):
         assert worker.image_profile.name == 'Jad_image'
         assert  worker.is_available == True
         os.remove('media/Jad_image')
+  def test_model_should_have_fname(self):
+    first_name ='first_name'
+    last_name = 'last_name'
+    worker = Worker.objects.create(
+            first_name='first_name',
+            last_name='last_name',
+            is_available=True,
+            primary_phone='primary_phone',
+            secondary_phone='secondary_phone',
+            address='address' 
+          )
+    assert worker.__str__() == f'{first_name} {last_name}'
