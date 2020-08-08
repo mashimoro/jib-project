@@ -29,5 +29,6 @@ class TestWorker(TestCase):
           )
         #Then
         selt.assertEqual(worker.first_name,first_name)
-        selt.assertEquals(worker.image_profile.name, 'Jad_image')
+        #selt.assertEquals(worker.image_profile.name, 'Jad_image')
+        assert worker.image_profile.name == 'Jad_image'
         os.remove('media/Jad_image')
