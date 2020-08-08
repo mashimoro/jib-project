@@ -15,13 +15,14 @@ Including another URLconf
 """
 
 from django.urls import  include,path
-from .views import WorkerListView,WorkerModelViewSetView
+from .views import WorkerListView
+# ,WorkerModelViewSetView
 from rest_framework.routers import DefaultRouter
 
-router = DefaultRouter()
-router.register(r'',WorkerModelViewSetView)
+# router = DefaultRouter()
+# router.register(r'',WorkerModelViewSetView)
 
 urlpatterns = [
-    path('/workerListView' ,WorkerListView.as_view()),
-    path('' ,include(router.urls)),
+    path('' ,WorkerListView.as_view()),
+    # path('' ,include(router.urls)),
 ]
