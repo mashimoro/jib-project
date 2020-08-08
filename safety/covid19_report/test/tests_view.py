@@ -3,8 +3,9 @@ from unittest.mock import patch
 
 # from v
 # Create your tests here.
+#stap ไม่ให้ test นี้ออก api จริง
+
 class TestCovid19ReportView(TestCase):
-  #stap ไม่ให้ test นี้ออก api จริง
   @patch('covid19_report.views.requests.get')
   def test_view_should_be_accesible(self,_):
     response = self.client.get('/covid19-reports/')
@@ -33,9 +34,7 @@ class TestCovid19ReportView(TestCase):
             "DevBy": "https://www.kidkarnmai.com/",
             "SeverBy": "https://smilehost.asia/"
         }
-    print(f'r:{r.json()}')    
     response = self.client.get('/covid19-reports/')
-    print(f'response:{response}')
     self.assertContains(response ,'NewConfirmed: 50')
 
 

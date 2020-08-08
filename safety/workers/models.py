@@ -8,3 +8,4 @@ class Worker(models.Model):
     primary_phone=models.CharField(max_length=10)
     secondary_phone=models.CharField(max_length=10)
     address=models.TextField()
+    image_profile=models.ImageField()
