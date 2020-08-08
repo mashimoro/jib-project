@@ -31,4 +31,5 @@ class TestWorker(TestCase):
         selt.assertEqual(worker.first_name,first_name)
         #selt.assertEquals(worker.image_profile.name, 'Jad_image')
         assert worker.image_profile.name == 'Jad_image'
+        assert  worker.is_available == True
         os.remove('media/Jad_image')
