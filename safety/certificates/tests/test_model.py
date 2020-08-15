@@ -1,6 +1,7 @@
 from django.test import TestCase 
 from ..models import Certificate
 from workers.models import Worker
+import os
 class TestCertificates(TestCase):
   def setUp(self):
     pass
@@ -14,8 +15,8 @@ class TestCertificates(TestCase):
             first_name='first_name',
             last_name='last_name',
             is_available=True,
-            primary_phone='primary_phone',
-            secondary_phone='secondary_phone',
+            primary_phone='0123456789',
+            secondary_phone='0123456789',
             address='address' 
           )
 
@@ -30,3 +31,4 @@ class TestCertificates(TestCase):
     assert certificate.name == 'Jad'
     assert certificate.issued_by == 'Put'
     assert certificate.worker.first_name == 'first_name'
+    os.remove(f'media/qr_code/qr_code-first_name.png') 

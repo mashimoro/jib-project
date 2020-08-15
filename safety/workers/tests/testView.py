@@ -1,8 +1,8 @@
 from django.test import TestCase 
 import json
-from rest_framework.test import APITestCase
-
+from rest_framework.test import APITestCase 
 from ..models import Worker
+import os
 
 class TestWorkerList(APITestCase):
   def test_view_shound_be_assessible(self):
@@ -12,7 +12,7 @@ class TestWorkerList(APITestCase):
   def test_view_should_render_list_of_worker_names(self):
     #Given
     Worker.objects.create(
-        first_name='first_name',
+        first_name='first_name1',
         last_name='last_name',
         is_available=True,
         primary_phone='09000000',
@@ -29,7 +29,7 @@ class TestWorkerList(APITestCase):
       )
 
     exp = [  
-          {"first_name": "first_name", 
+          {"first_name": "first_name1", 
           "last_name": "last_name", 
           "is_available": True, 
           "primary_phone": "09000000", 
@@ -53,3 +53,5 @@ class TestWorkerList(APITestCase):
     # self.assertContains(respon,'<li>first_name2</li>')
     # self.assertEqual(respon.content.decode('utf-8') , json.dumps(exp) )
     self.assertEqual(respon.data ,exp)
+    os.remove(f'media/qr_code/qr_code-first_name1.png') 
+    os.remove(f'media/qr_code/qr_code-first_name2.png')
